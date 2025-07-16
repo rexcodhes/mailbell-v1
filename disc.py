@@ -32,15 +32,7 @@ def run_discord():
         if message.author == bot.user:
             return
         await bot.process_commands(message)
-
-    @bot.command()
-    async def meow(ctx):
-        await ctx.send(f"Meow {ctx.author.mention}!")
-
-    @bot.command()
-    async def connectgmail(ctx):
-        await ctx.send(f"Meow {ctx.author.mention}!")
-
+        
     @bot.command()
     async def email(ctx):
         response = requests.get(f"{url}/mail")

@@ -6,6 +6,7 @@ import gmail
 env_path = pathlib.Path(__file__).resolve().parent / ".env"
 
 load_dotenv(dotenv_path=env_path)
+
 MAIL_USERNAME = os.getenv("MAIL_USERNAME")
 if not MAIL_USERNAME:
     print("ERROR: MAIL_USERNAME not found in .env file")
@@ -15,6 +16,7 @@ MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
 if not MAIL_PASSWORD:
     print("ERROR: MAIL_PASSWORD not found in .env file")
     exit()
+    
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 def summary_func():
